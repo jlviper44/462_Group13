@@ -11,7 +11,7 @@ class sessionHandler
 
 	public:
 		bool authenticateUser(Account user, std::string userName, std::string password);
-		bool terminateUserSession();
+		bool terminateUserSession(Account user);
 };
 
 #endif
