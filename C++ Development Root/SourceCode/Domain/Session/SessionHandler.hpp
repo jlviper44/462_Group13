@@ -1,4 +1,4 @@
-#include "../AccountManager/Account.hpp"
+#include "../Session/Session.hpp"
 
 #ifndef _SESSIONHANDLER_HPP_
 #define _SESSIONHANDLER_HPP_
@@ -6,12 +6,11 @@
 class sessionHandler
 {
 	private:
-		std::string sessionID;
-		std::string sessionDate;
+		Session _currentSession;
 
 	public:
-		bool authenticateUser(Account user, std::string userName, std::string password);
-		bool terminateUserSession(Account user);
+		bool authenticateUser(std::string inputtedUsername, std::string inputtedPassword, std::string username, std::string password);
+		bool terminateUserSession();
 };
 
 #endif

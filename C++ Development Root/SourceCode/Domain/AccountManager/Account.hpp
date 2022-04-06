@@ -1,22 +1,32 @@
 #ifndef __ACCOUNT__
 #define __ACCOUNT__
 
+#include <any>
+#include <memory>
+#include <string>
+#include <vector>
+#include "TechnicalServices/Logging/LoggerHandler.hpp"
+
+
 class Account
 {
 	public:
+		std::string _name;
+		long long   _userID;
+
 		Account(std::string name,
-				std::string userID,
+				long long   userID,
 				std::string accountCreated,
 				std::string password);
-		std::string _name;
-		std::string getUserID();
+		~Account();
+
 		std::string getPassword();
+		void addToLog(std::string log);
+
 	private:
-		std::string _userID;
 		std::string _accountCreated;
 		std::string _password;
-
-
+		std::vector<std::string> _log;
 };
 
 #endif
