@@ -20,8 +20,12 @@ namespace TechnicalServices::Persistence
 
 
       // Operations
-      std::vector<std::string> findRoles()                                       override;  // Returns list of all legal roles
-      UserCredentials          findCredentialsByName( const std::string & name ) override;  // Returns credentials for specified user, throws NoSuchUser if user not found
+      // std::vector<std::string> findRoles()                                       override;  // Returns list of all legal roles
+      // UserCredentials          findCredentialsByName( const std::string & name ) override;  // Returns credentials for specified user, throws NoSuchUser if user not found
+
+      //Account, Listing, Resume
+      
+
 
       // Adaptation Data read only access.  Adaptation data is a Key/Value pair
       const std::string & operator[]( const std::string & key ) const override;

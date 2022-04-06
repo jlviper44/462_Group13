@@ -1,5 +1,5 @@
-#ifndef ACCOUNT
-#define ACCOUNT
+#ifndef __ACCOUNT__
+#define __ACCOUNT__
 
 class Account
 {
