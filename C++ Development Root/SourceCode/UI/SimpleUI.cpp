@@ -24,7 +24,7 @@ namespace UI
 	
 	SimpleUI::~SimpleUI() noexcept
 	{
-		// _logger << "Simple UI shutdown successfully";
+		_logger << "Simple UI shutdown successfully";
 	}
 
 	void SimpleUI::launch()
