@@ -1,15 +1,21 @@
 #include "SessionHandler.hpp"
 
-bool sessionHandler::authenticateUser(Account user, std::string userName, std::string password)
+bool sessionHandler::authenticateUser(std::string inputtedUsername, std::string inputtedPassword, std::string username, std::string password)
 {
-	if (user.getUserID() == userName && user.getPassword() == password)
+	// if (user.getUserID() == userName && user.getPassword() == password)
+	// {
+	// 	return true;
+	// }
+	if(inputtedUsername != username && inputtedPassword != password)
 	{
-		return true;
+		return false;
 	}
-	return false;
+
+	_currentSession = Session();
+	return true;
 };
 
-bool sessionHandler::terminateUserSession(Account user)
+bool sessionHandler::terminateUserSession()
 {
 	// std::cout<<user.getPassword() << user.getUserID() << std::endl;
 	

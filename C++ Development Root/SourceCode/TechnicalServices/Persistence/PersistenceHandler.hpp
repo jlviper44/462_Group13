@@ -5,18 +5,19 @@
 #include <string>
 #include <vector>
 
-
-
+#include "Domain/AccountManager/Account.hpp"
+#include "Domain/ListingManager/Listing.hpp"
+#include "Domain/ResumeManager/Resume.hpp"
 
 namespace TechnicalServices::Persistence
 {
   // Function argument type definitions
-  struct UserCredentials
-  {
-    std::string               userName;
-    std::string               passPhrase;
-    std::vector<std::string>  roles;
-  };
+  // struct UserCredentials
+  // {
+  //   std::string               userName;
+  //   std::string               passPhrase;
+  //   std::vector<std::string>  roles;
+  // };
 
 
 
@@ -39,9 +40,12 @@ namespace TechnicalServices::Persistence
 
 
       // Operations
-      virtual std::vector<std::string> findRoles()                                       = 0;   // Returns list of all legal roles
-      virtual UserCredentials          findCredentialsByName( const std::string & name ) = 0;   // Returns credentials for specified user, throws NoSuchUser if user not found
-
+      std::vector<Account> accounts;
+      std::vector<Listing> listings;
+      std::vector<Resume>  resumes;
+      // virtual std::vector<std::string> findRoles()                                       = 0;   // Returns list of all legal roles
+      // virtual UserCredentials          findCredentialsByName( const std::string & name ) = 0;   // Returns credentials for specified user, throws NoSuchUser if user not found
+      // virtual std::vector<Account> getAllAccounts() = 0;
 
       // Adaptation Data read only access.  Adaptation data is a Key/Value pair
       // Throws NoSuchProperty

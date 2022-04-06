@@ -28,7 +28,11 @@ namespace UI
 	}
 
 	void SimpleUI::launch()
-	{
-
+	{	
+		// std::vector<Account> accounts = _persistentData.getAllAccounts();
+		// std::cout << accounts.back().getUserID();
+		Account newAccount = Account("Justin", 0000, "today", "Lee");
+		_persistentData.accounts.push_back(newAccount);
+		std::cout << _persistentData.accounts.back().getPassword() << std::endl;
 	}
 }
