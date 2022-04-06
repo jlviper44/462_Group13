@@ -25,7 +25,7 @@ namespace TechnicalServices::Persistence
 
       //Account, Listing, Resume
       
-
+      
 
       // Adaptation Data read only access.  Adaptation data is a Key/Value pair
       const std::string & operator[]( const std::string & key ) const override;

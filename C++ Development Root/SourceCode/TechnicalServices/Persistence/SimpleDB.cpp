@@ -86,33 +86,33 @@ namespace TechnicalServices::Persistence
 
 
 
-  std::vector<std::string> SimpleDB::findRoles()
-  {
-    return { "Borrower", "Librarian", "Administrator", "Management" };
-  }
+  // std::vector<std::string> SimpleDB::findRoles()
+  // {
+  //   return { "Borrower", "Librarian", "Administrator", "Management" };
+  // }
 
 
 
 
-  UserCredentials SimpleDB::findCredentialsByName( const std::string & name )
-  {
-    static std::vector<UserCredentials> storedUsers =
-    {
-    // Username    Pass Phrase         Authorized roles
-      {"Tom",     "CPSC 462 Rocks!",  {"Borrower",     "Management"}},
-      {"Barbara", "Why am I here?",   {"Borrower"                  }},
-      {"Amanda",  "",                 {"Administrator"             }}
-    };
+  // UserCredentials SimpleDB::findCredentialsByName( const std::string & name )
+  // {
+  //   static std::vector<UserCredentials> storedUsers =
+  //   {
+  //   // Username    Pass Phrase         Authorized roles
+  //     {"Tom",     "CPSC 462 Rocks!",  {"Borrower",     "Management"}},
+  //     {"Barbara", "Why am I here?",   {"Borrower"                  }},
+  //     {"Amanda",  "",                 {"Administrator"             }}
+  //   };
 
-    for( const auto & user : storedUsers ) if( user.userName == name ) return user;
+  //   for( const auto & user : storedUsers ) if( user.userName == name ) return user;
 
-    // Name not found, log the error and throw something
-    std::string message = __func__;
-    message += " attempt to find user \"" + name + "\" failed";
+  //   // Name not found, log the error and throw something
+  //   std::string message = __func__;
+  //   message += " attempt to find user \"" + name + "\" failed";
 
-    _logger << message;
-    throw PersistenceHandler::NoSuchUser( message );
-  }
+  //   _logger << message;
+  //   throw PersistenceHandler::NoSuchUser( message );
+  // }
 
 
 
