@@ -20,8 +20,8 @@ namespace TechnicalServices::Persistence
 
 
       // Operations
-      // std::vector<std::string> findRoles()                                       override;  // Returns list of all legal roles
-      // UserCredentials          findCredentialsByName( const std::string & name ) override;  // Returns credentials for specified user, throws NoSuchUser if user not found
+      std::vector<std::string> findRoles()                                       override;  // Returns list of all legal roles
+      UserCredentials          findCredentialsByName( const std::string & name ) override;  // Returns credentials for specified user, throws NoSuchUser if user not found
 
       //Account, Listing, Resume
       
