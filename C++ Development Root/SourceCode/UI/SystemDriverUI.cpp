@@ -1,6 +1,6 @@
 #include "UI/SystemDriverUI.hpp"
 
-#include "Domain/Session/SessionHandler.hpp"
+#include "Domain/Session/SessionManager.hpp"
 
 #include "TechnicalServices/Logging/LoggerHandler.hpp"
 

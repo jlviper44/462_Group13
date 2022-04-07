@@ -1,16 +1,31 @@
-#include "../Session/Session.hpp"
+#ifndef __SESSIONHANDLER__
+#define __SESSIONHANDLER__
 
-#ifndef _SESSIONHANDLER_HPP_
-#define _SESSIONHANDLER_HPP_
+#include <memory>
 
-class sessionHandler
+// #include "Domain/SessionManager/Session.hpp"
+#include "Domain/AccountManager/Account.hpp"
+
+namespace Domain::SessionManager
 {
-	private:
-		Session _currentSession;
 
-	public:
-		bool authenticateUser(std::string inputtedUsername, std::string inputtedPassword, std::string username, std::string password);
-		bool terminateUserSession();
-};
+    //using TechnicalServices::Persistence::Account;
+
+
+    class SessionHandler
+    {
+        public:
+        
+        //Manager Factory
+        static std::unique_ptr<SessionHandler> createMgr();
+
+        //Operations
+        virtual long long authenticateUser(std::string name, std::string password) = 0;
+        virtual bool terminateUserSession(long long sessionID) = 0;
+        
+        //Destructor
+        virtual ~SessionHandler() noexcept = 0;
+    };
+}
 
 #endif

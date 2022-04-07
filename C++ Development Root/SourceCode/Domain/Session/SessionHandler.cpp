@@ -1,23 +1,15 @@
-#include "SessionHandler.hpp"
+#include <memory>
+#include <iostream>
+#include "Domain/Session/SessionHandler.hpp"
+#include "Domain/Session/SessionManager.hpp"
 
-bool sessionHandler::authenticateUser(std::string inputtedUsername, std::string inputtedPassword, std::string username, std::string password)
+
+namespace Domain::SessionManager
 {
-	// if (user.getUserID() == userName && user.getPassword() == password)
-	// {
-	// 	return true;
-	// }
-	if(inputtedUsername != username && inputtedPassword != password)
-	{
-		return false;
-	}
-
-	_currentSession = Session();
-	return true;
-};
-
-bool sessionHandler::terminateUserSession()
-{
-	// std::cout<<user.getPassword() << user.getUserID() << std::endl;
-	
-	return true;
-};
+    std::unique_ptr<SessionHandler> SessionHandler::createMgr()
+    {
+        std::cout << "SessionHandler running...";
+        return std::make_unique<SessionManager>();
+    }
+    SessionHandler::~SessionHandler(){}
+}

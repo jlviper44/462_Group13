@@ -1,14 +1,16 @@
 #ifndef __SESSION__
 #define __SESSION__
 
+#include "Domain/AccountManager/Account.hpp"
+
 class Session
 {
 	public:
-		Session();
-	private:
-		long long _sessionID;
-		std::string _sessionDate;
+		long long _id;
+		std::string _date;
 
+		Session();
+		~Session();
 };
 
 #endif
