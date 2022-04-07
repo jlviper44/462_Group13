@@ -138,4 +138,4 @@ namespace UI
 		currentResume._workInfo = _resumeMgr.createWorkInfo();
 		std::cout << _resumeMgr.resumeToString(currentResume);
 	}
-}
+}//
