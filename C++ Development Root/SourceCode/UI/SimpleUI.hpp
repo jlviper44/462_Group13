@@ -27,7 +27,7 @@ namespace UI
       // Operations
       void launch() override;
 
-
+      void runScenarioFive();
       // Destructor
       ~SimpleUI() noexcept override;
 

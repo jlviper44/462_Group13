@@ -32,12 +32,32 @@ namespace UI
 
 	void SimpleUI::launch()
 	{	
-		// std::vector<Account> accounts = _persistentData.getAllAccounts();
-		// std::cout << accounts.back().getUserID();
+
+		runScenarioFive();
 		
+
 		Account newAccount = Account("Justin", 0000, "today", "Lee");
 		_persistentData.accounts.push_back(newAccount);
 		std::cout << _persistentData.accounts.back().getPassword() << std::endl;
 		
+	}
+	void SimpleUI::runScenarioFive()
+	{
+
+		std::vector<Account> allAccounts = _accountMgr.getAllAccounts();
+		//std::cout << allAccounts.size();
+		for(unsigned i=0; i < allAccounts.size(); i++){
+			std::cout << allAccounts[i]._userID << " " << allAccounts[i]._name << std::endl;
+		}
+
+		std::vector<std::string> userLogs = _accountMgr.getAccountLogsByID(001);
+		for(unsigned i=0; i < userLogs.size(); i++){
+			std::cout << userLogs[i] << std::endl;
+		}
+
+		if(_accountMgr.resetPassword(001))
+		{
+			std::cout << "Password has been reset" << std::endl;
+		}
 	}
 }

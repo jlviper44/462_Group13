@@ -25,8 +25,10 @@ namespace TechnicalServices::Persistence
       // UserCredentials          findCredentialsByName( const std::string & name ) override;  // Returns credentials for specified user, throws NoSuchUser if user not found
 
       //Account, Listing, Resume
-      
-      // std::vector<Account> getAllAccounts() override;
+      std::vector<std::vector<std::string>> getUserLogs() override;
+      std::vector<Account> getAllAccounts() override;
+      bool resetPassword(long long userID) override;
+
       std::vector<Account> accounts;
       std::vector<Listing> listings;
       std::vector<Resume>  resumes;

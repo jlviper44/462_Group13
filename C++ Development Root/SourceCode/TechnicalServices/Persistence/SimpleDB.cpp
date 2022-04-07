@@ -83,11 +83,40 @@ namespace TechnicalServices::Persistence
     _logger << "Simple DB shutdown successfully";
   }
 
- /* std::vector<Account> SimpleDB::getAllAccounts()
+   std::vector<Account> SimpleDB::getAllAccounts()
   {
-    return {};
-  }*/
+    static Account accA = Account("Dante", 001, "today", "password");
+    static Account accB = Account("Kevin", 002, "today", "p4ssw0rd");
+    static std::vector<Account> storedAccounts = {accA, accB};
+    return storedAccounts;
+  }
 
+  bool SimpleDB::resetPassword(long long userID)
+  {
+    static Account accA = Account("Dante", 001, "today", "password");
+    static Account accB = Account("Kevin", 002, "today", "p4ssw0rd");
+    static std::vector<Account> storedAccounts = {accA, accB};
+    for(unsigned i=0; i < storedAccounts.size(); i++)
+    {
+      if (userID == storedAccounts[i]._userID)
+      {
+        return true;
+      }
+    }
+    return false;
+  }  
+
+  std::vector<std::vector<std::string>> SimpleDB::getUserLogs()
+  {
+    std::vector<std::vector<std::string>> logs = {
+      {"001", "Log 1"},
+      {"002", "Log 2"},
+      {"002", "Log 3"},
+      {"001", "Log 4"},
+      {"001", "Log 5"}
+    };
+    return logs;
+  }
 
   // std::vector<std::string> SimpleDB::findRoles()
   // {

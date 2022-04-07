@@ -19,7 +19,13 @@ namespace TechnicalServices::Persistence
   //   std::vector<std::string>  roles;
   // };
 
-
+  // struct Account
+  // {
+  //   std::string name;
+	// 	long long   userID;
+	// 	std::string accountCreated;
+	// 	std::string password;
+  // };
 
 
   // Persistence Package within the Technical Services Layer Abstract class
@@ -45,7 +51,9 @@ namespace TechnicalServices::Persistence
       std::vector<Resume>  resumes;
       // virtual std::vector<std::string> findRoles()                                       = 0;   // Returns list of all legal roles
       // virtual UserCredentials          findCredentialsByName( const std::string & name ) = 0;   // Returns credentials for specified user, throws NoSuchUser if user not found
-      // virtual std::vector<Account> getAllAccounts() = 0;
+      virtual std::vector<std::vector<std::string>> getUserLogs() = 0;
+      virtual std::vector<Account> getAllAccounts() = 0;
+      virtual bool resetPassword(long long userID) = 0;
 
       // Adaptation Data read only access.  Adaptation data is a Key/Value pair
       // Throws NoSuchProperty

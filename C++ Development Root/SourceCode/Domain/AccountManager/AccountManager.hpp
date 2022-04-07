@@ -7,13 +7,17 @@
 
 namespace Domain::AccountManager
 {
+
+
     class AccountManager : public Domain::AccountManager::AccountHandler
     {
         public:
         AccountManager();
 
         //operations
-        std::vector<Account> getAllAccounts();
+        std::vector<Account> getAllAccounts() override;
+        std::vector<std::string> getAccountLogsByID(long long) override;
+        bool resetPassword(long long userID) override;
 
         ~AccountManager() noexcept override;
 
