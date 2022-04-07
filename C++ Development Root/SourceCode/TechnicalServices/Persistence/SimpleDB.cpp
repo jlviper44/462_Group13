@@ -83,10 +83,10 @@ namespace TechnicalServices::Persistence
     _logger << "Simple DB shutdown successfully";
   }
 
-  std::vector<Account> SimpleDB::getAllAccounts()
+ /* std::vector<Account> SimpleDB::getAllAccounts()
   {
     return {};
-  }
+  }*/
 
 
   // std::vector<std::string> SimpleDB::findRoles()
