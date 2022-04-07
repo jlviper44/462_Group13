@@ -1,17 +1,20 @@
 #include "Resume.hpp"
 
-Resume::Resume( std::string name,
-				long long id,
-				std::string date,
-				long long userID,
-				std::string description)
-{
-	_name        = name;
-	_id          = id;
-	_date        = date;
-	_userID      = userID;
-	_description = description; 
+#include <string>
+#include <iostream>
 
+Resume::Resume( std::string contactInfo,
+				std::string objInfo,
+				std::string skillInfo,
+				std::string eduInfo,
+				std::string workInfo)
+{
+	_contactInfo = contactInfo;
+	_objInfo 	 = objInfo;
+	_skillInfo	 = skillInfo;
+	_eduInfo	 = eduInfo;
+	_workInfo	 = workInfo;
 }
 
 Resume::~Resume(){}
+Resume::Resume(){}

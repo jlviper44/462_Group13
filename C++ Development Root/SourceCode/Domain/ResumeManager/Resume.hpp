@@ -4,18 +4,21 @@
 class Resume
 {
 	public:
-		std::string _name;
-		long long   _id;
-		std::string _date;
-		long long   _userID;
-		std::string _description;
+		std::string _contactInfo;
+		std::string _objInfo;
+		std::string _skillInfo;
+		std::string _eduInfo;
+		std::string _workInfo;
 
-		Resume( std::string name,
-				long long   id,
-				std::string date,
-				long long   userID,
-				std::string description);
+		Resume( std::string contactInfo,
+				std::string objInfo,
+				std::string skillInfo,
+				std::string eduInfo,
+				std::string workInfo);
 		~Resume();
+
+		Resume();
 };
+
 
 #endif

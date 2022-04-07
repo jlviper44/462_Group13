@@ -21,7 +21,6 @@ namespace TechnicalServices::Persistence
 
 
 
-
   // Persistence Package within the Technical Services Layer Abstract class
   // Singleton Class - only one instance of the DB exists for the entire system
   class PersistenceHandler

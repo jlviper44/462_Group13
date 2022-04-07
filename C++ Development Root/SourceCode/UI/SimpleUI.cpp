@@ -40,6 +40,13 @@ namespace UI
 		Account newAccount = Account("Justin", 0000, "today", "Lee");
 		_persistentData.accounts.push_back(newAccount);
 		std::cout << _persistentData.accounts.back().getPassword() << std::endl;
-		
+
+		Resume currentResume = _resumeMgr.buildResume();
+		currentResume._contactInfo = _resumeMgr.createContactInfo();
+		currentResume._eduInfo = _resumeMgr.createEduInfo();
+		currentResume._objInfo = _resumeMgr.createObjInfo();
+		currentResume._skillInfo = _resumeMgr.createSkillInfo();
+		currentResume._workInfo = _resumeMgr.createWorkInfo();
+		std::cout << _resumeMgr.resumeToString(currentResume);
 	}
 }
