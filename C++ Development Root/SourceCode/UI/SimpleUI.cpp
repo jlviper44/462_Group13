@@ -13,13 +13,16 @@
 #include "TechnicalServices/Logging/LoggerHandler.hpp"
 #include "TechnicalServices/Persistence/PersistenceHandler.hpp"
 #include "Domain/AccountManager/AccountHandler.hpp"
+#include "Domain/ResumeManager/ResumeHandler.hpp"
+
 
 namespace UI
 {
 	SimpleUI::SimpleUI()
 	: _loggerPtr( TechnicalServices::Logging::LoggerHandler::create() ),
 	_persistentData( TechnicalServices::Persistence::PersistenceHandler::instance() ),
-	_accountMgrPtr( Domain::AccountManager::AccountHandler::createMgr() )
+	_accountMgrPtr( Domain::AccountManager::AccountHandler::createMgr() ),
+	_resumeMgrPtr( Domain::ResumeManager::ResumeHandler::createMgr() )
 	{
 		_logger << "Simple UI being used and has been successfully initialized";
 	}

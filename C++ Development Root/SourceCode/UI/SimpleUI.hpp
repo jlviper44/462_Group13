@@ -8,6 +8,7 @@
 #include "UI/UserInterfaceHandler.hpp"
 
 #include "Domain/AccountManager/AccountHandler.hpp"
+#include "Domain/ResumeManager/ResumeHandler.hpp"
 
 
 namespace UI
@@ -42,5 +43,7 @@ namespace UI
       TechnicalServices::Logging::LoggerHandler                            & _logger = *_loggerPtr;
       std::unique_ptr<Domain::AccountManager::AccountHandler> _accountMgrPtr;
       Domain::AccountManager::AccountHandler & _accountMgr = *_accountMgrPtr;
+      std::unique_ptr<Domain::ResumeManager::ResumeHandler> _resumeMgrPtr;
+      Domain::ResumeManager::ResumeHandler & _resumeMgr = *_resumeMgrPtr;
   };
 } // namespace UI

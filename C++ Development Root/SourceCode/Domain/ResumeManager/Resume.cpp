@@ -11,6 +11,7 @@ Resume::Resume( std::string name,
 	_date        = date;
 	_userID      = userID;
 	_description = description; 
+
 }
 
 Resume::~Resume(){}
