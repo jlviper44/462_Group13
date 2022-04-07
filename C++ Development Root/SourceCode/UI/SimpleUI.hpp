@@ -28,7 +28,10 @@ namespace UI
       // Operations
       void launch() override;
 
-      void runScenarioFive();
+      void runScenarioOne();
+      void runScenarioTwo();
+      void runScenarioThree();
+      
       // Destructor
       ~SimpleUI() noexcept override;
 

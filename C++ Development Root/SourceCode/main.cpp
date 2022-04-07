@@ -76,10 +76,11 @@ int main()
   }
 
 
-  std::cout << "Available ssd tests:\n" 
+  std::cout << "Available tests:\n" 
             << "1: Post Job Listing\n"
-            << "4: Promote Job Listing\n"
-            << "5: Manage and Monitor Logs\n"
+            << "2: Build Resume\n"
+            << "3: Manage and Monitor Logs\n"
+            << "4: Quit\n"
             << "Enter the ssd number you would like to test: ";
 
   char response;
@@ -102,14 +103,18 @@ int main()
 
   }
 
-  else if (response == '4')
+  else if (response == '2')
   {
 
   }
 
-  else if (response == '5')
+  else if (response == '3')
   {
 
+  }
+  else if (response == '4')
+  {
+    
   }
   else
   {

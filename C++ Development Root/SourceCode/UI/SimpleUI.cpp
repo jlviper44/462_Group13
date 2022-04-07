@@ -36,16 +36,46 @@ namespace UI
 
 	void SimpleUI::launch()
 	{	
+		char response;
+		do
+		{
+                  std::cout << "Available tests:\n"
+                            << "1: Post Job Listing\n"
+                            << "2: Manage and Monitor Logs\n"
+                            << "3: Build Resume\n"
+                            << "4: Quit\n"
+                            << "Enter the ssd number you would like to test: ";
 
-		runScenarioFive();
-		
+                  
+                  std::cin >> response;
 
-		Account newAccount = Account("Justin", 0000, "today", "Lee");
-		_persistentData.accounts.push_back(newAccount);
-		std::cout << _persistentData.accounts.back().getPassword() << std::endl;
+                  if( response == '1' )
+                  {
+					  runScenarioOne();
+                  }
 
-		
-		//Satish's code
+                  else if( response == '2' )
+                  {
+					  runScenarioTwo();
+                  }
+
+                  else if( response == '3' )
+                  {
+					  runScenarioThree();
+                  }
+                  else if( response == '4' )
+                  {
+					  break;
+                  }
+                  else
+                  {
+                    std::cout << response << " is not available!\n";
+                  }
+
+                } while (response != '4');
+	}
+	void SimpleUI::runScenarioOne()
+	{
 		std::string jobName;
      	std::string jobType;
 	 	int jobID = 0;
@@ -62,7 +92,8 @@ namespace UI
 
 	
 	}
-	void SimpleUI::runScenarioFive()
+	
+	void SimpleUI::runScenarioTwo()
 	{
 
 		std::vector<Account> allAccounts = _accountMgr.getAllAccounts();
@@ -80,7 +111,10 @@ namespace UI
 		{
 			std::cout << "Password has been reset" << std::endl;
 		}
-		//kevin's code
+		
+	}
+	void SimpleUI::runScenarioThree()
+	{
 		Resume currentResume = _resumeMgr.buildResume();
 		currentResume._contactInfo = _resumeMgr.createContactInfo();
 		currentResume._eduInfo = _resumeMgr.createEduInfo();
