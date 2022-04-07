@@ -79,9 +79,6 @@ namespace UI
 	}
 	void SimpleUI::runScenarioOne()
 	{
-		std::cout << std::endl;
-		_logger << "authenticateUser(Dante, password)";
-		std::cout << std::endl;
 
 		std::string name;
 		std::string password;
@@ -97,23 +94,11 @@ namespace UI
 			_logger << "User Authenticated with sessionID: " + std::to_string(sessionID);
 			std::cout << std::endl;
 
-
-			_logger << "showFormatting()";
-			std::cout << std::endl;
-
 			std::string jobName;
 	    std::string jobType;
 		 	int jobID = 0;
 			_listingMgr.showFormatting();
 
-			std::cout << std::endl;
-			_logger << "Please enter Job Listing Information as follows\nJob Name and Job Type";
-			std::cout << std::endl;
-
-
-			std::cout << std::endl;
-			_logger << "writeListingInfo(surgeon, full-time)";
-			std::cout << std::endl;
 
 			std::cin >> jobName >> jobType;
 			
@@ -121,20 +106,13 @@ namespace UI
 
 			std::cout << std::endl;
 			_logger << "Listing currlisting created with jobName: " + jobName + " jobType: " + jobType;
-			
-			std::cout << std::endl;
-			_logger << "confirmSavedListing(currlisting)";
-			std::cout << std::endl;
+
 
 			currlisting.isPosted = _listingMgr.confirmSavedListing(currlisting);
 
 
 			if (currlisting.isPosted == true){
 				_listingMgr.postListing(currlisting);
-
-				std::cout << std::endl;
-				_logger << "Job Listing was successfully POSTED!";
-				std::cout << std::endl;
 
 				_persistentData.listings.push_back(currlisting);
 				_listingMgr.confirmPostedListing(currlisting, _persistentData.listings);
@@ -154,9 +132,6 @@ namespace UI
 	
 	void SimpleUI::runScenarioTwo()
 	{
-		std::cout << std::endl;
-		_logger << "authenticateUser(Dante, password)";
-		std::cout << std::endl;
 
 		std::string name;
 		std::string password;
@@ -166,8 +141,13 @@ namespace UI
 		std::cin >> password;
 		long long sessionID = _sessionMgr.authenticateUser(name, password);
 
+		
 		if(sessionID != 0)
 			{
+				std::cout << std::endl;
+				_logger << "User Authenticated with sessionID: " + std::to_string(sessionID);
+				std::cout << std::endl;
+
 				std::cout << "Manage Accounts:\nY|N\n";
 				char response;
 				std::cin >> response;
@@ -212,10 +192,6 @@ namespace UI
 	}
 	void SimpleUI::runScenarioThree()
 	{
-		std::cout << std::endl;
-		_logger << "authenticateUser(Dante, password)";
-		std::cout << std::endl;
-
 		std::string name;
 		std::string password;
 		std::cout << "Enter your name: ";
@@ -223,9 +199,12 @@ namespace UI
 		std::cout << "Enter your password: ";
 		std::cin >> password;
 		long long sessionID = _sessionMgr.authenticateUser(name, password);
-
 		if(sessionID != 0)
 		{
+			std::cout << std::endl;
+			_logger << "User Authenticated with sessionID: " + std::to_string(sessionID);
+			std::cout << std::endl;
+			
 			Resume currentResume = _resumeMgr.buildResume();
 			currentResume._contactInfo = _resumeMgr.createContactInfo();
 			currentResume._eduInfo = _resumeMgr.createEduInfo();
