@@ -9,6 +9,7 @@
 #include "Domain/ListingManager/Listing.hpp"
 #include "Domain/ResumeManager/Resume.hpp"
 
+
 namespace TechnicalServices::Persistence
 {
   // Function argument type definitions
@@ -20,6 +21,11 @@ namespace TechnicalServices::Persistence
   // };
 
 
+  // struct Listing{
+  //   std::string name;
+  //   std::string type;
+  //   long long id;
+  // }
 
 
   // Persistence Package within the Technical Services Layer Abstract class

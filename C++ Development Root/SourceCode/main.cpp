@@ -10,6 +10,11 @@
 #include "Domain/ListingManager/ListingHandler.hpp"
 #include "Domain/ListingManager/ListingManager.hpp"
 #include "Domain/ListingManager/Listing.hpp"
+#include "Domain/Session/SessionHandler.hpp"
+#include "Domain/Session/Session.hpp"
+
+#include "Domain/AccountManager/AccountHandler.hpp"
+
 #include <vector>
 
 
@@ -26,6 +31,9 @@ int main()
   std::cout << "attempting to run createNewJob";
   listingManager.createNewJobObj("test", "test", 1234);
   */
+
+ std::vector<Listing> listings;
+ 
 
   try
   {
@@ -68,43 +76,44 @@ int main()
   }
 
 
-  // std::cout << "Available ssd tests:\n" 
-  //           << "1: Post Job Listing\n"
-  //           << "4: Promote Job Listing\n"
-  //           << "5: Manage and Monitor Logs\n"
-  //           << "Enter the ssd number you would like to test: ";
+  std::cout << "Available ssd tests:\n" 
+            << "1: Post Job Listing\n"
+            << "4: Promote Job Listing\n"
+            << "5: Manage and Monitor Logs\n"
+            << "Enter the ssd number you would like to test: ";
 
-  // char response;
-  // std::cin >> response;
+  char response;
+  std::cin >> response;
 
-  // if (response == '1')
-  // {
-  //   auto acc = Account("Justin", "0000XX", "01/01/2022 12:00 AM", "JustinLee");
-  //   auto session = sessionHandler();
-  //   bool auth = session.authenticateUser(acc, "0000XX", "JustinLee");
-  //   if(auth == true)
-  //   {
-  //     std::cout<<"Account Successfully Authenticated\n";
-  //   }
-  //   else
-  //   {
-  //     std::cout<<"Account Failed Authentication\n";
-  //   }
+  if (response == '1')
+  {
+    /*auto acc = Account("Justin", "0000XX", "01/01/2022 12:00 AM", "JustinLee");
+    auto session = sessionHandler();
+    bool auth = session.authenticateUser(acc, "0000XX", "JustinLee");*/
+    bool auth = true;
+    if(auth == true)
+    {
+      std::cout<<"Account Successfully Authenticated\n";
+    }
+    else
+    {
+      std::cout<<"Account Failed Authentication\n";
+    }
 
-  // }
+  }
 
-  // else if (response == '4')
-  // {
+  else if (response == '4')
+  {
 
-  // }
+  }
 
-  // else if (response == '5')
-  // {
+  else if (response == '5')
+  {
 
-  // }
-  // else
-  // {
-  //   std::cout << response << " is not available!\n";
-  // }
+  }
+  else
+  {
+    std::cout << response << " is not available!\n";
+  }
 
 };

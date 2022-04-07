@@ -8,6 +8,7 @@ class Listing
 		std::string _name;
 		std::string _type;
 		long long   _id;
+		bool isPosted;
 
 		Listing(std::string name,
 				std::string type,
