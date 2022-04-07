@@ -1,14 +1,16 @@
 #include "Session.hpp"
+#include "Domain/AccountManager/Account.hpp"
 #include <chrono>
 #include <ctime>
 #include <iomanip> 
 #include <sstream> 
 #include <string>
 
+
 Session::Session()
 {
 	const auto p1 = std::chrono::system_clock::now();
-	_sessionID = std::chrono::duration_cast<std::chrono::seconds>(p1.time_since_epoch()).count();
+	_id = std::chrono::duration_cast<std::chrono::seconds>(p1.time_since_epoch()).count();
 
 	std::stringstream myTime;
 	auto now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
@@ -22,5 +24,10 @@ Session::Session()
       myTime << std::put_time( std::localtime( &now ), "%Y-%m-%d %X" );
     #endif
 
-    _sessionDate = myTime.str();
+  _date = myTime.str();
+}
+
+Session::~Session()
+{
+
 }
