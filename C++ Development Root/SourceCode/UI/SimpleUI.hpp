@@ -7,6 +7,7 @@
 #include "UI/UserInterfaceHandler.hpp"
 #include "Domain/AccountManager/AccountHandler.hpp"
 #include "Domain/ListingManager/ListingHandler.hpp"
+#include "Domain/ResumeManager/ResumeHandler.hpp"
 
 
 namespace UI
@@ -44,5 +45,7 @@ namespace UI
       
       std::unique_ptr<Domain::ListingManager::ListingHandler> _listingMgrPtr;
       Domain::ListingManager::ListingHandler & _listingMgr = *_listingMgrPtr;
+      std::unique_ptr<Domain::ResumeManager::ResumeHandler> _resumeMgrPtr;
+      Domain::ResumeManager::ResumeHandler & _resumeMgr = *_resumeMgrPtr;
   };
 } // namespace UI

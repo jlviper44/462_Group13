@@ -14,6 +14,7 @@
 #include "TechnicalServices/Persistence/PersistenceHandler.hpp"
 #include "Domain/AccountManager/AccountHandler.hpp"
 #include "Domain/ListingManager/ListingHandler.hpp"
+#include "Domain/ResumeManager/ResumeHandler.hpp"
 
 
 namespace UI
@@ -23,6 +24,7 @@ namespace UI
 	_persistentData( TechnicalServices::Persistence::PersistenceHandler::instance() ),
 	_accountMgrPtr( Domain::AccountManager::AccountHandler::createMgr() ),
 	_listingMgrPtr( Domain::ListingManager::ListingHandler::createMgr())
+	_resumeMgrPtr( Domain::ResumeManager::ResumeHandler::createMgr() )
 	{
 		_logger << "Simple UI being used and has been successfully initialized";
 	}
@@ -43,7 +45,7 @@ namespace UI
 		std::cout << _persistentData.accounts.back().getPassword() << std::endl;
 
 		
-		
+		//Satish's code
 		std::string jobName;
      	std::string jobType;
 	 	int jobID = 0;
@@ -78,5 +80,13 @@ namespace UI
 		{
 			std::cout << "Password has been reset" << std::endl;
 		}
+		//kevin's code
+		Resume currentResume = _resumeMgr.buildResume();
+		currentResume._contactInfo = _resumeMgr.createContactInfo();
+		currentResume._eduInfo = _resumeMgr.createEduInfo();
+		currentResume._objInfo = _resumeMgr.createObjInfo();
+		currentResume._skillInfo = _resumeMgr.createSkillInfo();
+		currentResume._workInfo = _resumeMgr.createWorkInfo();
+		std::cout << _resumeMgr.resumeToString(currentResume);
 	}
 }
