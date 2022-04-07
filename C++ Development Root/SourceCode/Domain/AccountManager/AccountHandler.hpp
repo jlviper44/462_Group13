@@ -8,7 +8,7 @@ namespace Domain::AccountManager
     class AccountHandler
     {
         public:
-
+        
         //Manager Factory
         static std::unique_ptr<AccountHandler> createMgr();
         //Operations

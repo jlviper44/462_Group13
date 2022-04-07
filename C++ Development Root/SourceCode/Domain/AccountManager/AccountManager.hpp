@@ -5,7 +5,7 @@
 
 namespace Domain::AccountManager
 {
-    class AccountManager: public Domain::AccountManager::AccountHandler
+    class AccountManager : public Domain::AccountManager::AccountHandler
     {
         public:
         AccountManager();

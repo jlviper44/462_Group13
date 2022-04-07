@@ -7,7 +7,7 @@
 
 #include "UI/UserInterfaceHandler.hpp"
 
-
+#include "Domain/AccountManager/AccountHandler.hpp"
 
 
 namespace UI
@@ -40,5 +40,7 @@ namespace UI
       // convenience reference object enabling standard insertion syntax
       // This line must be physically after the definition of _loggerPtr
       TechnicalServices::Logging::LoggerHandler                            & _logger = *_loggerPtr;
+      std::unique_ptr<Domain::AccountManager::AccountHandler> _accountMgrPtr;
+      Domain::AccountManager::AccountHandler & _accountMgr = *_accountMgrPtr;
   };
 } // namespace UI

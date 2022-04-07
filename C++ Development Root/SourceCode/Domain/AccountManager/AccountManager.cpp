@@ -8,4 +8,5 @@ namespace Domain::AccountManager
     {
         std::cout << "Account Manager says hello";
     }
+    AccountManager::~AccountManager(){}
 }
