@@ -2,6 +2,8 @@
 #define __ACCOUNTMANAGER_
 
 #include "Domain/AccountManager/AccountHandler.hpp"
+#include "TechnicalServices/Persistence/PersistenceHandler.hpp"
+
 
 namespace Domain::AccountManager
 {
@@ -10,9 +12,14 @@ namespace Domain::AccountManager
         public:
         AccountManager();
 
-
+        //operations
+        std::vector<Account> getAllAccounts();
 
         ~AccountManager() noexcept override;
+
+        private:
+        TechnicalServices::Persistence::PersistenceHandler & _persistentData;
+
     };
 }
 
