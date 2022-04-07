@@ -109,11 +109,11 @@ namespace TechnicalServices::Persistence
   std::vector<std::vector<std::string>> SimpleDB::getUserLogs()
   {
     std::vector<std::vector<std::string>> logs = {
-      {"001", "Log 1"},
-      {"002", "Log 2"},
-      {"002", "Log 3"},
-      {"001", "Log 4"},
-      {"001", "Log 5"}
+      {"001", "2022-04-07 13:15:43 | Failed attempt to log in"},
+      {"002", "2022-04-07 13:15:48 | Logged in successfully"},
+      {"002", "2022-04-07 13:16:02 | Logged out successfully"},
+      {"001", "2022-04-07 13:17:37 | [Error] Too many login attempts!"},
+      {"001", "2022-04-07 13:18:23 | Requested Password Reset"}
     };
     return logs;
   }
