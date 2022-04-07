@@ -4,20 +4,7 @@
 #include <new>          // bad_alloc
 #include <typeinfo>     // typeinfo.name()
 
-// #include "Domain/SessionManager/SessionHandler.hpp"
-// #include "Domain/AccountManager/Account.hpp"
 #include "UI/UserInterfaceHandler.hpp"
-#include "Domain/ListingManager/ListingHandler.hpp"
-#include "Domain/ListingManager/ListingManager.hpp"
-#include "Domain/ListingManager/Listing.hpp"
-#include "Domain/Session/SessionHandler.hpp"
-#include "Domain/Session/Session.hpp"
-
-#include "Domain/AccountManager/AccountHandler.hpp"
-
-#include <vector>
-
-
 
 int main()
 {
