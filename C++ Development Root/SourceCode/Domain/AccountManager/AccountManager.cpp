@@ -7,7 +7,6 @@ namespace Domain::AccountManager
     AccountManager::AccountManager() 
     : _persistentData( TechnicalServices::Persistence::PersistenceHandler::instance() )
     {
-        std::cout << "Account Manager says hello";
     }
 
     AccountManager::~AccountManager(){}

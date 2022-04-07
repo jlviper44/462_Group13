@@ -8,7 +8,6 @@ namespace Domain::ResumeManager
 {
     std::unique_ptr<ResumeHandler> ResumeHandler::createMgr()
     {
-        std::cout << "ResumeHandler running...";
         return std::make_unique<ResumeManager>();
     }
     ResumeHandler::~ResumeHandler(){}

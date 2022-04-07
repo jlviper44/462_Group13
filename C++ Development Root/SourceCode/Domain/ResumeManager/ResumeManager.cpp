@@ -7,7 +7,6 @@
 namespace Domain::ResumeManager{
 
     ResumeManager::ResumeManager() {
-        std::cout << "Resume says hey c:";
 
     }
     ResumeManager::~ResumeManager(){}

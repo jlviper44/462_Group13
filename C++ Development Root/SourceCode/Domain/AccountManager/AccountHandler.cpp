@@ -8,7 +8,6 @@ namespace Domain::AccountManager
 {
     std::unique_ptr<AccountHandler> AccountHandler::createMgr()
     {
-        std::cout << "AccountHandler running...";
         return std::make_unique<AccountManager>();
     }
     AccountHandler::~AccountHandler(){}

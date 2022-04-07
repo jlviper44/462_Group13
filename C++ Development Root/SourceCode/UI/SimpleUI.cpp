@@ -95,23 +95,38 @@ namespace UI
 	
 	void SimpleUI::runScenarioTwo()
 	{
-
-		std::vector<Account> allAccounts = _accountMgr.getAllAccounts();
-		//std::cout << allAccounts.size();
-		for(unsigned i=0; i < allAccounts.size(); i++){
-			std::cout << allAccounts[i]._userID << " " << allAccounts[i]._name << std::endl;
-		}
-
-		std::vector<std::string> userLogs = _accountMgr.getAccountLogsByID(001);
-		for(unsigned i=0; i < userLogs.size(); i++){
-			std::cout << userLogs[i] << std::endl;
-		}
-
-		if(_accountMgr.resetPassword(001))
+		std::cout << "Manage Accounts:\nY|N\n";
+		char response;
+		std::cin >> response;
+		if(response == 'Y' || response == 'y')
 		{
-			std::cout << "Password has been reset" << std::endl;
+			std::vector<Account> allAccounts = _accountMgr.getAllAccounts();
+			for(unsigned i=0; i < allAccounts.size(); i++){
+				std::cout << allAccounts[i]._userID << " " << allAccounts[i]._name << std::endl;
+			}
+			std::cout << "Enter the number of the account to view account logs:\n";
+			std::string userID;
+			std::cin >> userID;
+			long long userIDLL = std::stoll(userID);
+			std::vector<std::string> userLogs = _accountMgr.getAccountLogsByID(userIDLL);
+			for(unsigned i=0; i < userLogs.size(); i++){
+				std::cout << userLogs[i] << std::endl;
+			}
+			std::cout << "Choose an action to take:\n"
+						<< "1. Reset Account Password\n"
+						<< "2. Lockdown Account\n"
+						<< "3. Delete Account\n";
+			char adminChoice;
+			std::cin >> adminChoice;
+			if(adminChoice == '1')
+			{
+				if(_accountMgr.resetPassword(userIDLL))
+				{
+					std::cout << "Password has been reset" << std::endl;
+				}
+			} 
+			
 		}
-		
 	}
 	void SimpleUI::runScenarioThree()
 	{

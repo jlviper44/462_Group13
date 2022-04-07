@@ -14,7 +14,6 @@ namespace Domain::ListingManager{
 
 	ListingManager::ListingManager(std::vector<Listing> listings)
 	{
-		std::cout << "Listing Manager says hello";
 		 _listings = listings;
 	}
 
