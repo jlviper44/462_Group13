@@ -59,9 +59,8 @@ namespace Domain::ListingManager{
 	}
 
 
-	void ListingManager::postListing(Listing listing){
-
-		_listings.push_back(listing);
+	bool ListingManager::postListing(Listing listing){
+		return true;
 	}
 
 	bool ListingManager::confirmSavedListing(Listing listing){

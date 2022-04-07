@@ -32,7 +32,7 @@ namespace Domain::ListingManager
 
            bool confirmSavedListing(Listing listing);
 
-           void postListing(Listing listing);
+           bool postListing(Listing listing);
 
            void confirmPostedListing(Listing listing, std::vector<Listing> listings); 
 

@@ -21,7 +21,7 @@ namespace Domain::ListingManager
             virtual void showFormatting() = 0;
             virtual Listing writeListingInfo(std::string jobName, std::string jobType) = 0;
             virtual bool confirmSavedListing(Listing listing) = 0;
-            virtual void postListing(Listing listing) = 0;
+            virtual bool postListing(Listing listing) = 0;
            
             virtual void confirmPostedListing(Listing listing, std::vector<Listing> listings) = 0;
     };
