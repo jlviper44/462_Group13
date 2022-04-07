@@ -12,6 +12,6 @@ namespace Domain::AccountManager
     AccountManager::~AccountManager(){}
 
     std::vector<Account> getAllAccounts(){
-
+        
     }
 }

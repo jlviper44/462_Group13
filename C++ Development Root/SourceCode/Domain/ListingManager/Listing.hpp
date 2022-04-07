@@ -1,5 +1,6 @@
 #ifndef __LISTING__
 #define __LISTING__
+#include <iostream>
 
 class Listing
 {

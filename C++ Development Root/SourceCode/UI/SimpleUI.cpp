@@ -13,6 +13,7 @@
 #include "TechnicalServices/Logging/LoggerHandler.hpp"
 #include "TechnicalServices/Persistence/PersistenceHandler.hpp"
 #include "Domain/AccountManager/AccountHandler.hpp"
+#include "Domain/ListingManager/ListingHandler.hpp"
 
 namespace UI
 {
