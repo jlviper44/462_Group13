@@ -23,7 +23,7 @@ namespace UI
 	: _loggerPtr( TechnicalServices::Logging::LoggerHandler::create() ),
 	_persistentData( TechnicalServices::Persistence::PersistenceHandler::instance() ),
 	_accountMgrPtr( Domain::AccountManager::AccountHandler::createMgr() ),
-	_listingMgrPtr( Domain::ListingManager::ListingHandler::createMgr())
+	_listingMgrPtr( Domain::ListingManager::ListingHandler::createMgr()),
 	_resumeMgrPtr( Domain::ResumeManager::ResumeHandler::createMgr() )
 	{
 		_logger << "Simple UI being used and has been successfully initialized";
