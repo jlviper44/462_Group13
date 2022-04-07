@@ -1,4 +1,5 @@
 #include "Listing.hpp"
+#include <iostream>
 
 Listing::Listing(std::string name,
 				 std::string type,
