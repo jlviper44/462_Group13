@@ -15,50 +15,58 @@ namespace Domain::ResumeManager{
         return Resume();
     }
 
-    std::string ResumeManager::createContactInfo() {
-        std::string contactInfo;
+    Resume ResumeManager::createContactInfo(Resume currentResume, std::string contactInfo) {
+        // std::string contactInfo;
 
-        std::cout << "Enter your contact information: ";
-        std::cin.ignore();
-        std::getline (std::cin, contactInfo);
-
-        return contactInfo;
+        // std::cout << "Enter your contact information: ";
+        // std::cin.ignore();
+        // std::getline (std::cin, contactInfo);
+        currentResume._contactInfo = contactInfo;
+        return currentResume;
     }
 
-    std::string ResumeManager::createObjInfo() {
-        std::string objStatement;
+    Resume ResumeManager::createObjInfo(Resume currentResume, std::string objInfo) {
+        // std::string objStatement;
 
-        std::cout << "Enter your objective statement: ";
-        std::getline (std::cin, objStatement);
+        // std::cout << "Enter your objective statement: ";
+        // std::getline (std::cin, objStatement);
 
-        return objStatement;
+        // return objStatement;
+        currentResume._objInfo = objInfo;
+        return currentResume;
     }
 
-    std::string ResumeManager::createSkillInfo() {
-        std::string skills;
+    Resume ResumeManager::createSkillInfo(Resume currentResume, std::string skillInfo) {
+        // std::string skills;
 
-        std::cout << "List your skills: ";
-        std::getline (std::cin, skills);
+        // std::cout << "List your skills: ";
+        // std::getline (std::cin, skills);
 
-        return skills;
+        // return skills;
+        currentResume._skillInfo = skillInfo;
+        return currentResume;
     }
 
-    std::string ResumeManager::createEduInfo() {
-        std::string prevEducation;
+    Resume ResumeManager::createEduInfo(Resume currentResume, std::string eduInfo) {
+        // std::string prevEducation;
 
-        std::cout << "List your previous education: ";
-        std::getline (std::cin, prevEducation);
+        // std::cout << "List your previous education: ";
+        // std::getline (std::cin, prevEducation);
 
-        return prevEducation;
+        // return prevEducation;
+        currentResume._eduInfo = eduInfo;
+        return currentResume;
     }
 
-    std::string ResumeManager::createWorkInfo() {
-        std::string prevWorkExp;
+    Resume ResumeManager::createWorkInfo(Resume currentResume, std::string workInfo) {
+        // std::string prevWorkExp;
 
-        std::cout << "List your previous work experience: ";
-        std::getline (std::cin, prevWorkExp);
+        // std::cout << "List your previous work experience: ";
+        // std::getline (std::cin, prevWorkExp);
 
-        return prevWorkExp;
+        // return prevWorkExp;
+        currentResume._workInfo = workInfo;
+        return currentResume;
     }
 
     std::string ResumeManager::resumeToString(Resume currentResume){

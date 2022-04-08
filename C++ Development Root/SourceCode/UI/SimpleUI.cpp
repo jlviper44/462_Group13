@@ -206,11 +206,34 @@ namespace UI
 			std::cout << std::endl;
 			
 			Resume currentResume = _resumeMgr.buildResume();
-			currentResume._contactInfo = _resumeMgr.createContactInfo();
-			currentResume._eduInfo = _resumeMgr.createEduInfo();
-			currentResume._objInfo = _resumeMgr.createObjInfo();
-			currentResume._skillInfo = _resumeMgr.createSkillInfo();
-			currentResume._workInfo = _resumeMgr.createWorkInfo();
+
+			std::string contactInfo;
+      std::cout << "Enter your contact information: ";
+      std::cin.ignore();
+      std::getline (std::cin, contactInfo);
+      currentResume = _resumeMgr.createContactInfo(currentResume, contactInfo);
+
+      std::string objStatement;
+      std::cout << "Enter your objective statement: ";
+      std::getline (std::cin, objStatement);
+      currentResume = _resumeMgr.createObjInfo(currentResume, objStatement);
+
+      std::string skills;
+      std::cout << "List your skills: ";
+      std::getline (std::cin, skills);
+      currentResume = _resumeMgr.createSkillInfo(currentResume, skills);
+
+      std::string prevEducation;
+      std::cout << "List your previous education: ";
+      std::getline (std::cin, prevEducation);
+      currentResume = _resumeMgr.createEduInfo(currentResume, prevEducation);
+
+      std::string prevWorkExp;
+      std::cout << "List your previous work experience: ";
+      std::getline (std::cin, prevWorkExp);
+      currentResume = _resumeMgr.createWorkInfo(currentResume, prevWorkExp);
+
+
 			std::cout << _resumeMgr.resumeToString(currentResume);
 
 			std::cout << std::endl;

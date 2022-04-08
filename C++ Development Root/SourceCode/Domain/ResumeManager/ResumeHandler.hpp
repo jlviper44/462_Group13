@@ -20,11 +20,11 @@ namespace Domain::ResumeManager
         //virtual Resume createContactInfo() = 0;
 
         virtual Resume buildResume() = 0;
-        virtual std::string createContactInfo() = 0;
-        virtual std::string createObjInfo() = 0;
-        virtual std::string createSkillInfo() = 0;
-        virtual std::string createEduInfo() = 0;
-        virtual std::string createWorkInfo() = 0;
+        virtual Resume createContactInfo(Resume currentResume, std::string contactInfo) = 0;
+        virtual Resume createObjInfo(Resume currentResume, std::string objInfo) = 0;
+        virtual Resume createSkillInfo(Resume currentResume, std::string skillInfo) = 0;
+        virtual Resume createEduInfo(Resume currentResume, std::string eduInfo) = 0;
+        virtual Resume createWorkInfo(Resume currentResume, std::string workInfo) = 0;
         virtual std::string resumeToString(Resume currentResume) = 0;
 
 

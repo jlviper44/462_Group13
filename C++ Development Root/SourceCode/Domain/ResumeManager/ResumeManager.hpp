@@ -14,11 +14,11 @@ namespace Domain::ResumeManager
         public:
         ResumeManager();
         Resume buildResume();
-        std::string createContactInfo();
-        std::string createObjInfo();
-        std::string createSkillInfo();
-        std::string createEduInfo();
-        std::string createWorkInfo();
+        Resume createContactInfo(Resume currentResume, std::string contactInfo);
+        Resume createObjInfo(Resume currentResume, std::string objInfo);
+        Resume createSkillInfo(Resume currentResume, std::string skillInfo);
+        Resume createEduInfo(Resume currentResume, std::string eduInfo);
+        Resume createWorkInfo(Resume currentResume, std::string workInfo);
         std::string resumeToString(Resume currentResume);
 
         ~ResumeManager() noexcept override;
