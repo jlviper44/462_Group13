@@ -19,7 +19,7 @@ namespace Domain::ResumeManager{
     bool ResumeManager::createContactInfo(long long resumeId, std::string contactInfo)
     {
         bool foundResume = false;
-        for (auto i : _persistentData.resumes)
+        for (auto &i : _persistentData.resumes)
         {
             if(i._id == resumeId)
             {
@@ -33,7 +33,7 @@ namespace Domain::ResumeManager{
     bool ResumeManager::createObjInfo(long long resumeId, std::string objInfo)
     {
         bool foundResume = false;
-        for (auto i : _persistentData.resumes)
+        for (auto &i : _persistentData.resumes)
         {
             if(i._id == resumeId)
             {
@@ -47,7 +47,7 @@ namespace Domain::ResumeManager{
     bool ResumeManager::createSkillInfo(long long resumeId, std::string skillInfo)
     {
         bool foundResume = false;
-        for (auto i : _persistentData.resumes)
+        for (auto &i : _persistentData.resumes)
         {
             if(i._id == resumeId)
             {
@@ -61,7 +61,7 @@ namespace Domain::ResumeManager{
     bool ResumeManager::createEduInfo(long long resumeId, std::string eduInfo)
     {
         bool foundResume = false;
-        for (auto i : _persistentData.resumes)
+        for (auto &i : _persistentData.resumes)
         {
             if(i._id == resumeId)
             {
@@ -75,7 +75,7 @@ namespace Domain::ResumeManager{
     bool ResumeManager::createWorkInfo(long long resumeId, std::string workInfo)
     {
         bool foundResume = false;
-        for (auto i : _persistentData.resumes)
+        for (auto &i : _persistentData.resumes)
         {
             if(i._id == resumeId)
             {
@@ -89,7 +89,7 @@ namespace Domain::ResumeManager{
     std::string ResumeManager::resumeToString(long long resumeId)
     {
         std::string result = "";
-        for (auto i : _persistentData.resumes)
+        for (auto &i : _persistentData.resumes)
         {
             if(i._id == resumeId)
             {
