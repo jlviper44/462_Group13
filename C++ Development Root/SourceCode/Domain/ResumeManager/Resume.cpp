@@ -3,7 +3,8 @@
 #include <string>
 #include <iostream>
 
-Resume::Resume( std::string contactInfo,
+Resume::Resume( long long id,
+				std::string contactInfo,
 				std::string objInfo,
 				std::string skillInfo,
 				std::string eduInfo,
@@ -17,4 +18,7 @@ Resume::Resume( std::string contactInfo,
 }
 
 Resume::~Resume(){}
-Resume::Resume(){}
+Resume::Resume(long long id)
+{
+	_id = id;
+}

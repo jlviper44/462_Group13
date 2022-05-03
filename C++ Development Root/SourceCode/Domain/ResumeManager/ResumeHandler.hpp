@@ -2,7 +2,6 @@
 #define __RESUMEHANDLER__
 
 #include <memory>
-#include "Resume.hpp"
 
 namespace Domain::ResumeManager
 {
@@ -19,13 +18,13 @@ namespace Domain::ResumeManager
         virtual ~ResumeHandler() noexcept = 0;
         //virtual Resume createContactInfo() = 0;
 
-        virtual Resume buildResume() = 0;
-        virtual Resume createContactInfo(Resume currentResume, std::string contactInfo) = 0;
-        virtual Resume createObjInfo(Resume currentResume, std::string objInfo) = 0;
-        virtual Resume createSkillInfo(Resume currentResume, std::string skillInfo) = 0;
-        virtual Resume createEduInfo(Resume currentResume, std::string eduInfo) = 0;
-        virtual Resume createWorkInfo(Resume currentResume, std::string workInfo) = 0;
-        virtual std::string resumeToString(Resume currentResume) = 0;
+        virtual long long buildResume() = 0;
+        virtual bool createContactInfo(long long resumeId, std::string contactInfo) = 0;
+        virtual bool createObjInfo(long long resumeId, std::string objInfo) = 0;
+        virtual bool createSkillInfo(long long resumeId, std::string skillInfo) = 0;
+        virtual bool createEduInfo(long long resumeId, std::string eduInfo) = 0;
+        virtual bool createWorkInfo(long long resumeId, std::string workInfo) = 0;
+        virtual std::string resumeToString(long long resumeId) = 0;
 
 
     };

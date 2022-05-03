@@ -2,7 +2,7 @@
 #include <iostream>
 #include "ListingHandler.hpp"
 #include "ListingManager.hpp"
-#include "Listing.hpp"
+// #include "Listing.hpp"
 
 
 
@@ -10,8 +10,8 @@ namespace Domain::ListingManager
 {
     std::unique_ptr<ListingHandler> ListingHandler::createMgr()
     {
-        std::vector<Listing> listings;
-        return std::make_unique<ListingManager>(listings);
+        // std::vector<Listing> listings;
+        return std::make_unique<ListingManager>();
     }
     ListingHandler::~ListingHandler(){}
 }

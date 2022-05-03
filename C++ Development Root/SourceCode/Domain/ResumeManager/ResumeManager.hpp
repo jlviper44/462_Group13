@@ -1,8 +1,8 @@
 #ifndef __RESUMEMANAGER__
 #define __RESUMEMANAGER_
 
+#include "TechnicalServices/Persistence/PersistenceHandler.hpp"
 #include "Domain/ResumeManager/ResumeHandler.hpp"
-#include "Resume.hpp"
 
 #include <string>
 
@@ -13,15 +13,19 @@ namespace Domain::ResumeManager
     {
         public:
         ResumeManager();
-        Resume buildResume();
-        Resume createContactInfo(Resume currentResume, std::string contactInfo);
-        Resume createObjInfo(Resume currentResume, std::string objInfo);
-        Resume createSkillInfo(Resume currentResume, std::string skillInfo);
-        Resume createEduInfo(Resume currentResume, std::string eduInfo);
-        Resume createWorkInfo(Resume currentResume, std::string workInfo);
-        std::string resumeToString(Resume currentResume);
+
+        long long buildResume();
+        bool createContactInfo(long long resumeId, std::string contactInfo);
+        bool createObjInfo(long long resumeId, std::string objInfo);
+        bool createSkillInfo(long long resumeId, std::string skillInfo);
+        bool createEduInfo(long long resumeId, std::string eduInfo);
+        bool createWorkInfo(long long resumeId, std::string workInfo);
+        std::string resumeToString(long long resumeId);
 
         ~ResumeManager() noexcept override;
+
+        private:
+        TechnicalServices::Persistence::PersistenceHandler & _persistentData;
     };
 }
 

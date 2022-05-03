@@ -8,7 +8,7 @@ Listing::Listing(std::string name,
 	_name = name;
 	_type = type;
 	_id   = id;
-	isPosted = false;
+	_isPosted = false;
 
 }
 
