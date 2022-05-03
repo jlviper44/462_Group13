@@ -161,66 +161,66 @@ namespace UI
 		}
 	}
 	
-	// void SimpleUI::runScenarioTwo()
-	// {
+	void SimpleUI::runScenarioTwo()
+	{
 
-	// 	std::string name;
-	// 	std::string password;
-	// 	std::cout << "Enter your name: ";
-	// 	std::cin >> name;
-	// 	std::cout << "Enter your password: ";
-	// 	std::cin >> password;
-	// 	long long sessionID = _sessionMgr.authenticateUser(name, password);
+		std::string name;
+		std::string password;
+		std::cout << "Enter your name: ";
+		std::cin >> name;
+		std::cout << "Enter your password: ";
+		std::cin >> password;
+		long long sessionID = _sessionMgr.authenticateUser(name, password);
 
 		
-	// 	if(sessionID != 0)
-	// 		{
-	// 			std::cout << std::endl;
-	// 			_logger << "User Authenticated with sessionID: " + std::to_string(sessionID);
-	// 			std::cout << std::endl;
+		if(sessionID != 0)
+			{
+				std::cout << std::endl;
+				_logger << "User Authenticated with sessionID: " + std::to_string(sessionID);
+				std::cout << std::endl;
 
-	// 			std::cout << "Manage Accounts:\nY|N\n";
-	// 			char response;
-	// 			std::cin >> response;
-	// 			if(response == 'Y' || response == 'y')
-	// 			{
-	// 				std::vector<Account> allAccounts = _accountMgr.getAllAccounts();
-	// 				for(unsigned i=0; i < allAccounts.size(); i++){
-	// 					std::cout << allAccounts[i]._userID << " " << allAccounts[i]._name << std::endl;
-	// 				}
-	// 				std::cout << "Enter the number of the account to view account logs:\n";
-	// 				std::string userID;
-	// 				std::cin >> userID;
-	// 				long long userIDLL = std::stoll(userID);
-	// 				std::vector<std::string> userLogs = _accountMgr.getAccountLogsByID(userIDLL);
-	// 				for(unsigned i=0; i < userLogs.size(); i++){
-	// 					std::cout << userLogs[i] << std::endl;
-	// 				}
-	// 				std::cout << "Choose an action to take:\n"
-	// 							<< "1. Reset Account Password\n"
-	// 							<< "2. Lockdown Account\n"
-	// 							<< "3. Delete Account\n";
-	// 				char adminChoice;
-	// 				std::cin >> adminChoice;
-	// 				if(adminChoice == '1')
-	// 				{
-	// 					if(_accountMgr.resetPassword(userIDLL))
-	// 					{
-	// 						std::cout << "Password has been reset" << std::endl;
-	// 					}
-	// 				}
-	// 			} 
-	// 		std::cout << std::endl;
-	// 		_logger << "terminateUserSession(sessionID)";
-	// 		std::cout << std::endl;
+				std::cout << "Manage Accounts:\nY|N\n";
+				char response;
+				std::cin >> response;
+				if(response == 'Y' || response == 'y')
+				{
+					std::vector<Account> allAccounts = _accountMgr.getAllAccounts();
+					for(unsigned i=0; i < allAccounts.size(); i++){
+						std::cout << allAccounts[i]._userID << " " << allAccounts[i]._name << std::endl;
+					}
+					std::cout << "Enter the number of the account to view account logs:\n";
+					std::string userID;
+					std::cin >> userID;
+					long long userIDLL = std::stoll(userID);
+					std::vector<std::string> userLogs = _accountMgr.getAccountLogsByID(userIDLL);
+					for(unsigned i=0; i < userLogs.size(); i++){
+						std::cout << userLogs[i] << std::endl;
+					}
+					std::cout << "Choose an action to take:\n"
+								<< "1. Reset Account Password\n"
+								<< "2. Lockdown Account\n"
+								<< "3. Delete Account\n";
+					char adminChoice;
+					std::cin >> adminChoice;
+					if(adminChoice == '1')
+					{
+						if(_accountMgr.resetPassword(userIDLL))
+						{
+							std::cout << "Password has been reset" << std::endl;
+						}
+					}
+				} 
+			std::cout << std::endl;
+			_logger << "terminateUserSession(sessionID)";
+			std::cout << std::endl;
 
-	// 		bool isSessionTerminated = _sessionMgr.terminateUserSession(sessionID);
+			bool isSessionTerminated = _sessionMgr.terminateUserSession(sessionID);
 
-	// 		std::cout << std::endl;
-	// 		_logger << "User Session terminated!";
-	// 		std::cout << std::endl;
-	// 	}
-	// }
+			std::cout << std::endl;
+			_logger << "User Session terminated!";
+			std::cout << std::endl;
+		}
+	}
 	void SimpleUI::runScenarioThree()
 	{
 		std::string name;
@@ -235,8 +235,7 @@ namespace UI
 			std::cout << std::endl;
 			_logger << "User Authenticated with sessionID: " + std::to_string(sessionID);
 			std::cout << std::endl;
-			
-			// Resume currentResume = _resumeMgr.buildResume();
+
 			long long resumeId = _resumeMgr.buildResume();
 
 			std::string contactInfo;
@@ -246,25 +245,25 @@ namespace UI
 			bool isContactCreated = _resumeMgr.createContactInfo(resumeId, contactInfo);
 
 			
-			// std::string objStatement;
-			// std::cout << "Enter your objective statement: ";
-			// std::getline (std::cin, objStatement);
-			// bool isObjCreated = _resumeMgr.createObjInfo(resumeId, objStatement);
+			std::string objStatement;
+			std::cout << "Enter your objective statement: ";
+			std::getline (std::cin, objStatement);
+			bool isObjCreated = _resumeMgr.createObjInfo(resumeId, objStatement);
 
-			// std::string skills;
-			// std::cout << "List your skills: ";
-			// std::getline (std::cin, skills);
-			// bool isSkillCreated = _resumeMgr.createSkillInfo(resumeId, skills);
+			std::string skills;
+			std::cout << "List your skills: ";
+			std::getline (std::cin, skills);
+			bool isSkillCreated = _resumeMgr.createSkillInfo(resumeId, skills);
 
-			// std::string prevEducation;
-			// std::cout << "List your previous education: ";
-			// std::getline (std::cin, prevEducation);
-			// bool isEduCreated = _resumeMgr.createEduInfo(resumeId, prevEducation);
+			std::string prevEducation;
+			std::cout << "List your previous education: ";
+			std::getline (std::cin, prevEducation);
+			bool isEduCreated = _resumeMgr.createEduInfo(resumeId, prevEducation);
 
-			// std::string prevWorkExp;
-			// std::cout << "List your previous work experience: ";
-			// std::getline (std::cin, prevWorkExp);
-			// bool isWorkCreated = _resumeMgr.createWorkInfo(resumeId, prevWorkExp);
+			std::string prevWorkExp;
+			std::cout << "List your previous work experience: ";
+			std::getline (std::cin, prevWorkExp);
+			bool isWorkCreated = _resumeMgr.createWorkInfo(resumeId, prevWorkExp);
 
 
 			std::cout << _resumeMgr.resumeToString(resumeId);

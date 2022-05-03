@@ -20,7 +20,6 @@ namespace Domain::AccountManager
         static std::unique_ptr<AccountHandler> createMgr();
 
         //Operations
-        //virtual std::string getUserLogByID(std::long long userID) = 0;
         virtual std::vector<Account> getAllAccounts() = 0;
         virtual std::vector<std::string> getAccountLogsByID(long long) = 0;
         virtual bool resetPassword(long long userID) = 0;
