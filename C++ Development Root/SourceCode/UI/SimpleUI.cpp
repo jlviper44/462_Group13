@@ -57,23 +57,23 @@ namespace UI
 			runScenarioOne();
 		}
 
-  //     else if( response == '2' )
-  //     {
-		// 		runScenarioTwo();
-  //     }
+      else if( response == '2' )
+      {
+				runScenarioTwo();
+      }
 
       else if( response == '3' )
       {
 				runScenarioThree();
       }
-  //     else if( response == '4' )
-  //     {
-		// 		break;
-  //     }
-  //     else
-  //     {
-  //       std::cout << response << " is not available!\n";
-  //     }
+      else if( response == '4' )
+      {
+				break;
+      }
+      else
+      {
+        std::cout << response << " is not available!\n";
+      }
 
     	} while (response != '4');
 	}
