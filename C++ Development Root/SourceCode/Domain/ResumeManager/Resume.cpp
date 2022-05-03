@@ -21,4 +21,9 @@ Resume::~Resume(){}
 Resume::Resume(long long id)
 {
 	_id = id;
+	_contactInfo = "";
+	_objInfo 	 = "";
+	_skillInfo	 = "";
+	_eduInfo	 = "";
+	_workInfo	 = "";
 }
