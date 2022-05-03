@@ -31,7 +31,7 @@ namespace UI
       void launch() override;
 
       void runScenarioOne();
-      // void runScenarioTwo();
+      void runScenarioTwo();
       void runScenarioThree();
       
       // Destructor
