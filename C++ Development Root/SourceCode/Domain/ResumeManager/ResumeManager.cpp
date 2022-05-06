@@ -12,8 +12,9 @@ namespace Domain::ResumeManager{
     ResumeManager::~ResumeManager(){}
 
     long long ResumeManager::buildResume(){
-        _persistentData.resumes.push_back(Resume(000000));
-        return 000000;
+        long long resumeID = _persistentData.resumes.size();
+        _persistentData.resumes.push_back(Resume(resumeID));
+        return resumeID;
     }
 
     bool ResumeManager::createContactInfo(long long resumeId, std::string contactInfo)

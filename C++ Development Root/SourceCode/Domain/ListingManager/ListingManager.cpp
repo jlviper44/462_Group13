@@ -20,8 +20,9 @@ namespace Domain::ListingManager{
 
 	long long ListingManager::createListing()
     {	
-    	_persistentData.listings.push_back(Listing("", "", 000000));
-        return 00000;
+    	long long listingID = _persistentData.listings.size();
+    	_persistentData.listings.push_back(Listing("", "", listingID));
+        return listingID;
     }
 
     bool ListingManager::writeListingInfo(std::string jobName, std::string jobType, long long listingId)
