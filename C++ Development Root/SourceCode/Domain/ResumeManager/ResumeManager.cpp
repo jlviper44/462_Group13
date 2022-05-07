@@ -11,10 +11,29 @@ namespace Domain::ResumeManager{
     : _persistentData( TechnicalServices::Persistence::PersistenceHandler::instance() ) {}
     ResumeManager::~ResumeManager(){}
 
-    long long ResumeManager::buildResume(){
+    long long ResumeManager::buildResume(std::string selectedResume){
         long long resumeID = _persistentData.resumes.size();
-        _persistentData.resumes.push_back(Resume(resumeID));
+        if(selectedResume == "College")
+        {
+            _persistentData.resumes.push_back(CollegeResume(resumeID));
+        }
+        else if(selectedResume == "Work")
+        {
+            _persistentData.resumes.push_back(WorkResume(resumeID));
+        }
+        else if(selectedResume == "Unemployed")
+        {
+            _persistentData.resumes.push_back(UnemployedResume(resumeID));
+        }
+        else
+        {
+            _persistentData.resumes.push_back(Resume(resumeID));
+        }
         return resumeID;
+    }
+    std::vector<std::string> ResumeManager::getResumeTypes()
+    {
+        return _persistentData.getResumeTypes();
     }
 
     bool ResumeManager::createContactInfo(long long resumeId, std::string contactInfo)
@@ -93,7 +112,7 @@ namespace Domain::ResumeManager{
         for (auto &i : _persistentData.resumes)
         {
             if(i._id == resumeId)
-            {
+            {   result += "Resume Type: " + i.getType() + "\n" + "\n";
                 result += "Phone number: " + i._contactInfo + "\n";
                 result += "Objective Statement: " + i._objInfo + "\n";
                 result += "Skills: " + i._skillInfo + "\n";
@@ -103,16 +122,5 @@ namespace Domain::ResumeManager{
         }
         return result;
     }
-
-    // std::string ResumeManager::resumeToString(Resume currentResume){
-    //     std::string result = "";
-    //     result += "Phone number: " + currentResume._contactInfo + "\n";
-    //     result += "Objective Statement: " + currentResume._objInfo + "\n";
-    //     result += "Skills: " + currentResume._skillInfo + "\n";
-    //     result += "Previous Education: " + currentResume._eduInfo + "\n";
-    //     result += "Previous Work Experience: " + currentResume._workInfo + "\n";
-
-    //     return result;
-    // }
 }
 

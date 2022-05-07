@@ -58,6 +58,7 @@ namespace TechnicalServices::Persistence
       // virtual std::vector<std::string> findRoles()                                       = 0;   // Returns list of all legal roles
       // virtual UserCredentials          findCredentialsByName( const std::string & name ) = 0;   // Returns credentials for specified user, throws NoSuchUser if user not found
       virtual std::vector<std::vector<std::string>> getUserLogs() = 0;
+      virtual std::vector<std::string> getResumeTypes() = 0;
       virtual std::vector<Account> getAllAccounts() = 0;
       virtual bool resetPassword(long long userID) = 0;
 

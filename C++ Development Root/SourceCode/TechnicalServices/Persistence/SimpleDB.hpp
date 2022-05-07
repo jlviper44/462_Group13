@@ -33,7 +33,7 @@ namespace TechnicalServices::Persistence
       std::vector<Listing> listings;
       std::vector<Resume>  resumes;
 
-
+      std::vector<std::string> getResumeTypes() override;
 
       // Adaptation Data read only access.  Adaptation data is a Key/Value pair
       const std::string & operator[]( const std::string & key ) const override;

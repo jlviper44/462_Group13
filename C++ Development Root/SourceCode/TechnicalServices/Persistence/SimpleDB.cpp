@@ -117,7 +117,17 @@ namespace TechnicalServices::Persistence
     };
     return logs;
   }
-
+  std::vector<std::string> SimpleDB::getResumeTypes()
+  {
+      std::vector<std::string> types = 
+      {
+          "College",
+          "Work",
+          "Unemployed",
+          "None"
+      };
+      return types;
+  }
   // std::vector<std::string> SimpleDB::findRoles()
   // {
   //   return { "Borrower", "Librarian", "Administrator", "Management" };

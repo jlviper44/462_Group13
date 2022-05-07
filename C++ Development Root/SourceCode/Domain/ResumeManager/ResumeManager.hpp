@@ -14,7 +14,8 @@ namespace Domain::ResumeManager
         public:
         ResumeManager();
 
-        long long buildResume();
+        std::vector<std::string> getResumeTypes();
+        long long buildResume(std::string selectedResume);
         bool createContactInfo(long long resumeId, std::string contactInfo);
         bool createObjInfo(long long resumeId, std::string objInfo);
         bool createSkillInfo(long long resumeId, std::string skillInfo);

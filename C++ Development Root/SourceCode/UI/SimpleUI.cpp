@@ -96,14 +96,14 @@ namespace UI
 
 			long long listingId = _listingMgr.createListing();
 			std::cout << "Listing has been created with id: " << listingId << std::endl;
-			
-			std::string jobName;
-	    	std::string jobType;
 
-	    	std::cout << "Please enter Job Listing Information as follows\n";
+			std::string jobName;
+			std::string jobType;
+
+			std::cout << "Please enter Job Listing Information as follows\n";
 			std::cout << "Job Name and Job Type\n";
 			std::cout << "Please enter Job Name (space) Job Type:\n";
-	    	std::cin >> jobName >> jobType;
+			std::cin >> jobName >> jobType;
 
 	    	bool isListingInfo = _listingMgr.writeListingInfo(jobName, jobType, listingId);
 	    	if(isListingInfo)
@@ -221,6 +221,7 @@ namespace UI
 			std::cout << std::endl;
 		}
 	}
+
 	void SimpleUI::runScenarioThree()
 	{
 		std::string name;
@@ -236,7 +237,18 @@ namespace UI
 			_logger << "User Authenticated with sessionID: " + std::to_string(sessionID);
 			std::cout << std::endl;
 
-			long long resumeId = _resumeMgr.buildResume();
+			std::vector<std::string> resumeTypes = _resumeMgr.getResumeTypes();
+			std::cout << "Select a resume type: " << std::endl;
+			for (auto i : resumeTypes)
+      {
+      		std::cout << i << std::endl;
+      }
+
+      std::string selectedResume;
+      std::cin >> selectedResume;
+
+			long long resumeId = _resumeMgr.buildResume(selectedResume);
+			std::cout << std::endl;
 
 			std::string contactInfo;
 			std::cout << "Enter your contact information: ";
@@ -265,7 +277,7 @@ namespace UI
 			std::getline (std::cin, prevWorkExp);
 			bool isWorkCreated = _resumeMgr.createWorkInfo(resumeId, prevWorkExp);
 
-
+			std::cout << std::endl;
 			std::cout << _resumeMgr.resumeToString(resumeId);
 
 			std::cout << std::endl;

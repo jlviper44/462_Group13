@@ -17,8 +17,8 @@ namespace Domain::ResumeManager
 
         virtual ~ResumeHandler() noexcept = 0;
         //virtual Resume createContactInfo() = 0;
-
-        virtual long long buildResume() = 0;
+        virtual std::vector<std::string> getResumeTypes() = 0;
+        virtual long long buildResume(std::string selectedResume) = 0;
         virtual bool createContactInfo(long long resumeId, std::string contactInfo) = 0;
         virtual bool createObjInfo(long long resumeId, std::string objInfo) = 0;
         virtual bool createSkillInfo(long long resumeId, std::string skillInfo) = 0;
