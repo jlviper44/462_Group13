@@ -2,6 +2,7 @@
 #define __RESUMEHANDLER__
 
 #include <memory>
+#include <vector>
 
 namespace Domain::ResumeManager
 {

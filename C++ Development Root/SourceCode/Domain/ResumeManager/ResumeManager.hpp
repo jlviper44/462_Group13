@@ -3,6 +3,8 @@
 
 #include "TechnicalServices/Persistence/PersistenceHandler.hpp"
 #include "Domain/ResumeManager/ResumeHandler.hpp"
+#include "TechnicalServices/PaymentAuth/PaymentAuthHandler.hpp"
+
 
 #include <string>
 
@@ -27,6 +29,8 @@ namespace Domain::ResumeManager
 
         private:
         TechnicalServices::Persistence::PersistenceHandler & _persistentData;
+        std::unique_ptr<TechnicalServices::PaymentAuth::PaymentAuthHandler> _paymentSystemPtr;
+        TechnicalServices::PaymentAuth::PaymentAuthHandler & _paymentSystem = *_paymentSystemPtr;
     };
 }
 

@@ -1,6 +1,7 @@
 #include "TechnicalServices/Persistence/PersistenceHandler.hpp"
 #include "Domain/ResumeManager/ResumeManager.hpp"
 #include "Resume.hpp"
+#include "TechnicalServices/PaymentAuth/PaymentAuthHandler.hpp"
 
 #include <iostream>
 #include <string>
@@ -8,11 +9,16 @@
 namespace Domain::ResumeManager{
 
     ResumeManager::ResumeManager()
-    : _persistentData( TechnicalServices::Persistence::PersistenceHandler::instance() ) {}
+    : _persistentData( TechnicalServices::Persistence::PersistenceHandler::instance() ),
+    _paymentSystemPtr( TechnicalServices::PaymentAuth::PaymentAuthHandler::createPaymentAuth() ) {}
     ResumeManager::~ResumeManager(){}
 
     long long ResumeManager::buildResume(std::string selectedResume){
         long long resumeID = _persistentData.resumes.size();
+
+        //put paymentauth here
+        _paymentSystem.newCharge();
+        
         if(selectedResume == "College")
         {
             _persistentData.resumes.push_back(CollegeResume(resumeID));
@@ -29,6 +35,7 @@ namespace Domain::ResumeManager{
         {
             _persistentData.resumes.push_back(Resume(resumeID));
         }
+        
         return resumeID;
     }
     std::vector<std::string> ResumeManager::getResumeTypes()
