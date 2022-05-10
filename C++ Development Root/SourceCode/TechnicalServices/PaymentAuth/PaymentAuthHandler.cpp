@@ -10,9 +10,6 @@ namespace TechnicalServices::PaymentAuth
 {
   PaymentAuthHandler::~PaymentAuthHandler() noexcept = default;
 
-
-
-
   std::unique_ptr<PaymentAuthHandler> PaymentAuthHandler::createPaymentAuth()
   {
     auto & persistantData = TechnicalServices::Persistence::PersistenceHandler::instance();

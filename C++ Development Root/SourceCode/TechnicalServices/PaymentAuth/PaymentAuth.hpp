@@ -4,7 +4,6 @@
 #include <memory>
 #include <set>
 
-#include "TechnicalServices/PaymentAuth/PaymentAuthHandler.hpp"
 
 namespace TechnicalServices::PaymentAuth
 {
