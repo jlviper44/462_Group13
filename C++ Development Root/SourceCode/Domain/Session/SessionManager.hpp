@@ -17,7 +17,6 @@ namespace Domain::SessionManager
 		public:
 			SessionManager();
 			long long authenticateUser(std::string name, std::string password);
-			// bool authenticateUser(std::string inputtedUsername, std::string inputtedPassword, std::string username, std::string password);
 			bool terminateUserSession(long long sessionID);
 			~SessionManager() noexcept override;
 	};

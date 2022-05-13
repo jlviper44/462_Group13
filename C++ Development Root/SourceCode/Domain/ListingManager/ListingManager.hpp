@@ -2,7 +2,7 @@
 #define __LISTINGMANAGER__
 #include <vector>
 #include <iostream>
-#include "ListingHandler.hpp"
+#include "Domain/ListingManager/ListingHandler.hpp"
 #include "TechnicalServices/Persistence/PersistenceHandler.hpp"
 
 namespace Domain::ListingManager
@@ -10,14 +10,13 @@ namespace Domain::ListingManager
     class ListingManager : public Domain::ListingManager::ListingHandler
     {
         public:
-
-           
-
-            // std::vector<Listing> _listings;
-
+            // Manager Factory
             ListingManager();
+
+            // Destructor
             ~ListingManager() noexcept override;
 
+            // Operations
             long long createListing();
             bool writeListingInfo(std::string jobName, std::string jobType, long long listingId);
             bool confirmSavedListing(long long listingId);

@@ -2,16 +2,10 @@
 #define __SESSIONHANDLER__
 
 #include <memory>
-
-// #include "Domain/SessionManager/Session.hpp"
 #include "Domain/AccountManager/Account.hpp"
 
 namespace Domain::SessionManager
 {
-
-    //using TechnicalServices::Persistence::Account;
-
-
     class SessionHandler
     {
         public:

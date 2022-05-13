@@ -11,16 +11,8 @@ namespace Domain::AccountManager
 
     AccountManager::~AccountManager(){}
 
-    // std::vector<TechnicalServices::Persistence::Account> getAllAccounts(){
-
-    //     std::vector<TechnicalServices::Persistence::Account> acc = {{"", 0, "", ""}};
-    //     return acc;
-    // }
     std::vector<Account> AccountManager::getAllAccounts(){
-
-        //std::vector<TechnicalServices::Persistence::Account> acc = {{"", 0, "", ""}};
         static std::vector<Account> allAccounts = _persistentData.getAllAccounts();
-
         return allAccounts;
     }
 

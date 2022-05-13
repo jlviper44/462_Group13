@@ -1,6 +1,6 @@
 #include "TechnicalServices/Persistence/PersistenceHandler.hpp"
-#include "ListingManager.hpp"
-#include "Listing.hpp"
+#include "Domain/ListingManager/ListingManager.hpp"
+#include "Domain/ListingManager/Listing.hpp"
 #include <vector>
 #include <iostream>
 

@@ -8,10 +8,6 @@
 
 namespace Domain::AccountManager
 {
-
-    //using TechnicalServices::Persistence::Account;
-
-
     class AccountHandler
     {
         public:

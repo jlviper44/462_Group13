@@ -19,12 +19,6 @@ namespace TechnicalServices::Persistence
       using PersistenceHandler::PersistenceHandler;    // inherit constructors
       SimpleDB();
 
-
-      // Operations
-      // std::vector<std::string> findRoles()                                       override;  // Returns list of all legal roles
-      // UserCredentials          findCredentialsByName( const std::string & name ) override;  // Returns credentials for specified user, throws NoSuchUser if user not found
-
-      //Account, Listing, Resume
       std::vector<std::vector<std::string>> getUserLogs() override;
       std::vector<Account> getAllAccounts() override;
       bool resetPassword(long long userID) override;

@@ -1,6 +1,6 @@
 #include "TechnicalServices/Persistence/PersistenceHandler.hpp"
 #include "Domain/ResumeManager/ResumeManager.hpp"
-#include "Resume.hpp"
+#include "Domain/ResumeManager/Resume.hpp"
 #include "TechnicalServices/PaymentAuth/PaymentAuthHandler.hpp"
 
 #include <iostream>
@@ -15,8 +15,7 @@ namespace Domain::ResumeManager{
 
     long long ResumeManager::buildResume(std::string selectedResume){
         long long resumeID = _persistentData.resumes.size();
-
-        //put paymentauth here
+        
         _paymentSystem.newCharge();
         
         if(selectedResume == "College")
